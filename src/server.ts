@@ -22,20 +22,7 @@ function getLLM(model: string | undefined) {
     }
 }
 
-const llm = getLLM(process.env.LLM_MODEL || "");
-llm.setTemplate(`Generate tags for the provided Description in CSV format. Examples:\n
-example1: wooden,brown,hand-crafted\n
-example2: plush,convertible,blue\n
-example3: stunning,love seat,pink\n
-The following is a list of valid tags and these tags in the below array must be used in the generated tags. \n
-[wooden,brown,hand-crafted,rustic,metal,silver,modern,sleek,shiny,leather,black,luxurious,
-sophisticated,fabric,beige,soft,cozy,wicker,natural,outdoor,tropical,rocker,gray,relax,wood,
-velvet,emerald,luxury,plush,convertible,blue,versatile,office,ergonomic,recliner,comfort,bar,
-stool,white,chic,sectional,red,spacious,vibrant,lounge,green,stylish,chesterfield,burgundy,classic,
-vintage,armchair,yellow,bright,futon,navy,multifunctional,transformable,swivel,purple,stunning,
-love seat,pink,romantic,dining,olive,elegant,daybed,teal,serene]\n
 
-Description:"{searchText}"`)
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
@@ -64,6 +51,22 @@ products.forEach((item: Product)=> {
         TAG_SET.add(tag);
     });
 });
+
+
+const llm = getLLM(process.env.LLM_MODEL || "");
+llm.setTemplate(`Generate tags for the provided Description in CSV format. Examples:\n
+example1: wooden,brown,hand-crafted\n
+example2: plush,convertible,blue\n
+example3: stunning,love seat,pink\n
+The following is a list of valid tags and these tags in the below array must be used in the generated tags. \n
+[wooden,brown,hand-crafted,rustic,metal,silver,modern,sleek,shiny,leather,black,luxurious,
+sophisticated,fabric,beige,soft,cozy,wicker,natural,outdoor,tropical,rocker,gray,relax,wood,
+velvet,emerald,luxury,plush,convertible,blue,versatile,office,ergonomic,recliner,comfort,bar,
+stool,white,chic,sectional,red,spacious,vibrant,lounge,green,stylish,chesterfield,burgundy,classic,
+vintage,armchair,yellow,bright,futon,navy,multifunctional,transformable,swivel,purple,stunning,
+love seat,pink,romantic,dining,olive,elegant,daybed,teal,serene]\n
+
+Description:"{searchText}"`);
 
 app.post('/search', async (req:any, res:any) => {
     const searchDescription = req.body.search;
