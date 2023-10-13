@@ -5,15 +5,23 @@ import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedroc
 export class ClaudBedrockWrapper implements LLM {
     template: string;
     client: any;
+    model: string;
     constructor(options: any) {
         this.template = "";
+        this.model = "anthropic.claude-instant-v1";
         this.client = new BedrockRuntimeClient(options);
     }
     setTemplate(template: string): void {
         this.template = template;
     }
+    setModel(model: string): void {
+        this.model = model;
+    }   
     async generatePrompt(searchText: string): Promise<string> {
         let prompt = this.template.replace("{searchText}", searchText);
+        let activeSpan = opentelemetry.trace.getActiveSpan();
+        activeSpan.setAttribute("app.model", this.model);
+        activeSpan.setAttribute("app.llm", "CLAUDE_BEDROCK");
         // Claude wants Human in the prompt
         const params = {
             body: JSON.stringify({
@@ -25,7 +33,7 @@ export class ClaudBedrockWrapper implements LLM {
                 stop_sequences: ["\n\nHuman:"],
                 anthropic_version: "bedrock-2023-05-31"
             }),
-            modelId: 'anthropic.claude-instant-v1', /* required */
+            modelId: this.model, /* required */
             accept: '*/*',
             contentType: 'application/json'
         };
@@ -39,7 +47,6 @@ export class ClaudBedrockWrapper implements LLM {
         let content = data.completion.trim();
 
         //Add Telemetry Around the OpenAI Call
-        let activeSpan = opentelemetry.trace.getActiveSpan();
         activeSpan.setAttribute("app.num_output_tokens", Math.ceil(content.length / 4));
         activeSpan.setAttribute("app.content", content);
         return content;

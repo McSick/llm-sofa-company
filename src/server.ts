@@ -17,8 +17,7 @@ function getLLM(model: string | undefined) {
                 secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
             })
         default:
-            console.log("No LLM_MODEL set, defaulting to OpenAI");
-            return new OpenAIWrapper(process.env.OPENAI_API_KEY);
+            throw new Error("No LLM_MODEL set");
     }
 }
 
@@ -52,9 +51,19 @@ products.forEach((item: Product)=> {
     });
 });
 
+// Example prompt templates
+const template_simple = `Generate tags for the description: "{searchText}"\nTags:`;
 
-const llm = getLLM(process.env.LLM_MODEL || "");
-llm.setTemplate(`Generate tags for the provided Description in CSV format. Examples:\n
+const template_valid_tags =`Generate tags for the provided Description in CSV format. 
+The following is a list of valid tags and these tags in the below array must be used in the generated tags.\n
+[wooden,brown,hand-crafted,rustic,metal,silver,modern,sleek,shiny,leather,black,luxurious,
+sophisticated,fabric,beige,soft,cozy,wicker,natural,outdoor,tropical,rocker,gray,relax,wood,
+velvet,emerald,luxury,plush,convertible,blue,versatile,office,ergonomic,recliner,comfort,bar,
+stool,white,chic,sectional,red,spacious,vibrant,lounge,green,stylish,chesterfield,burgundy,classic,
+vintage,armchair,yellow,bright,futon,navy,multifunctional,transformable,swivel,purple,stunning,
+love seat,pink,romantic,dining,olive,elegant,daybed,teal,serene]\nDescription:"{searchText}"`;
+
+const template_example_output = `Generate tags for the provided Description in CSV format. Examples:\n
 example1: wooden,brown,hand-crafted\n
 example2: plush,convertible,blue\n
 example3: stunning,love seat,pink\n
@@ -64,15 +73,15 @@ sophisticated,fabric,beige,soft,cozy,wicker,natural,outdoor,tropical,rocker,gray
 velvet,emerald,luxury,plush,convertible,blue,versatile,office,ergonomic,recliner,comfort,bar,
 stool,white,chic,sectional,red,spacious,vibrant,lounge,green,stylish,chesterfield,burgundy,classic,
 vintage,armchair,yellow,bright,futon,navy,multifunctional,transformable,swivel,purple,stunning,
-love seat,pink,romantic,dining,olive,elegant,daybed,teal,serene]\n
+love seat,pink,romantic,dining,olive,elegant,daybed,teal,serene]\nDescription:"{searchText}"`;
 
-Description:"{searchText}"`);
+const llm = getLLM(process.env.LLM_MODEL || "");
+llm.setTemplate(template_simple);
 
 app.post('/search', async (req:any, res:any) => {
     const searchDescription = req.body.search;
 
     let activeSpan = opentelemetry.trace.getActiveSpan();
-    activeSpan.setAttribute("app.model", process.env.LLM_MODEL);
     activeSpan.setAttribute("app.search_text", searchDescription);
 
     // Generate tags for the search description
