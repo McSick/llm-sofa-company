@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Chairs and Sofas</title>
+</head>
+
+<body>
+    <div id="loading-indicator" class="spinner-container" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    
+
+    <h1>Product List</h1>
+    <div>
+        <input name="search" type="text" placeholder="Describe your perfect chair..."/><button>Search</button>
+    </div>
+    <hr/>
+    <table border="1" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Price ($)</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+            <% products.forEach(product => { %>
+                <tr>
+                    <td><%= product.id %></td>
+                    <td><%= product.type %></td>
+                    <td><%= product.name %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.description %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+</body>
+
+</html>

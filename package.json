@@ -1,0 +1,29 @@
+{
+  "name": "chair-sofa-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node -r ./src/tracing.ts src/server.ts",
+    "build": "tsc",
+    "serve": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.428.0",
+    "@honeycombio/opentelemetry-node": "^0.5.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.39.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "openai": "^4.11.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.19",
+    "@types/node": "^20.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

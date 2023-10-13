@@ -1,0 +1,15 @@
+export OTEL_SERVICE_NAME=sofa-search
+export HONEYCOMB_API_KEY=<your HONEYCOMB_API_KEY>
+export OTEL_EXPORTER_OTLP_HEADERS="x-honeycomb-team=${HONEYCOMB_API_KEY}"
+
+# Use either OPEN_AI or CLAUDE_BEDROCK
+export LLM_MODEL=<OPEN_AI or CLAUDE_BEDROCK>
+
+# If you are using OpenAI un comment the line below
+# export OPENAI_API_KEY=<your OPENAI_API_KEY if using OPEN_AI>
+
+#if you are using bedrock uncomment the lines below
+# export AWS_REGION=<your aws region if using bedrock>
+# export AWS_ACCESS_KEY_ID=<your aws access key if using bedrock>
+# export AWS_SECRET_ACCESS_KEY=<your aws secret access key if using bedrock>
+

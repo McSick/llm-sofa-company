@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "type": "chair",
+        "name": "Wooden Chair",
+        "price": 50,
+        "color": "Brown",
+        "material": "Wood",
+        "description": "Elegant hand-crafted wooden chair. Perfect for rustic-themed interiors, bringing nature right into your living room.",
+        "tags": ["wooden", "brown", "hand-crafted", "rustic"]
+    },
+    {
+        "id": 2,
+        "type": "chair",
+        "name": "Metal Chair",
+        "price": 60,
+        "color": "Silver",
+        "material": "Metal",
+        "description": "Modern sleek metal chair with a shiny finish. A contemporary touch to brighten up your interior.",
+        "tags": ["metal", "silver", "modern", "sleek", "shiny"]
+    },
+    {
+        "id": 3,
+        "type": "sofa",
+        "name": "Leather Sofa",
+        "price": 300,
+        "color": "Black",
+        "material": "Leather",
+        "description": "Luxurious leather sofa that provides unparalleled comfort. Its black finish radiates sophistication and class.",
+        "tags": ["leather", "black", "luxurious", "sophisticated"]
+    },
+    {
+        "id": 4,
+        "type": "sofa",
+        "name": "Fabric Sofa",
+        "price": 250,
+        "color": "Beige",
+        "material": "Fabric",
+        "description": "Soft and cozy fabric sofa in a calm beige color. Perfect for cuddling up with a book on a lazy afternoon.",
+        "tags": ["fabric", "beige", "soft", "cozy"]
+    },
+    {
+        "id": 5,
+        "type": "chair",
+        "name": "Wicker Chair",
+        "price": 70,
+        "color": "Natural",
+        "material": "Wicker",
+        "description": "Beautifully woven wicker chair, ideal for patios and outdoor settings, giving a tropical feel.",
+        "tags": ["wicker", "natural", "outdoor", "tropical"]
+    },
+    {
+        "id": 6,
+        "type": "chair",
+        "name": "Rocker Chair",
+        "price": 110,
+        "color": "Gray",
+        "material": "Wood",
+        "description": "Relax and unwind in this smooth rocker chair, perfect for lulling yourself to a peaceful state.",
+        "tags": ["rocker", "gray", "relax", "wood"]
+    },
+    {
+        "id": 7,
+        "type": "sofa",
+        "name": "Velvet Sofa",
+        "price": 320,
+        "color": "Emerald",
+        "material": "Velvet",
+        "description": "Experience luxury with this plush emerald velvet sofa. A statement piece that adds richness to any room.",
+        "tags": ["velvet", "emerald", "luxury", "plush"]
+    },
+    {
+        "id": 8,
+        "type": "sofa",
+        "name": "Convertible Sofa",
+        "price": 290,
+        "color": "Blue",
+        "material": "Fabric",
+        "description": "Sleek and versatile, this convertible sofa provides both style and functionality to any space.",
+        "tags": ["convertible", "blue", "sleek", "versatile"]
+    },
+    {
+        "id": 9,
+        "type": "chair",
+        "name": "Office Chair",
+        "price": 150,
+        "color": "Black",
+        "material": "Leather",
+        "description": "Boost your productivity with this ergonomic office chair, designed for comfort during long working hours.",
+        "tags": ["office", "black", "ergonomic", "leather"]
+    },
+    {
+        "id": 10,
+        "type": "sofa",
+        "name": "Recliner Sofa",
+        "price": 380,
+        "color": "Brown",
+        "material": "Leather",
+        "description": "Sink into luxury with this recliner sofa, crafted to provide maximum comfort at the touch of a button.",
+        "tags": ["recliner", "brown", "luxury", "comfort"]
+    },
+    {
+        "id": 11,
+        "type": "chair",
+        "name": "Bar Stool",
+        "price": 90,
+        "color": "White",
+        "material": "Metal",
+        "description": "Modern bar stool with a chic design, perfect for high tables and bar counters.",
+        "tags": ["bar", "stool", "white", "chic"]
+    },
+    {
+        "id": 12,
+        "type": "sofa",
+        "name": "Sectional Sofa",
+        "price": 450,
+        "color": "Red",
+        "material": "Fabric",
+        "description": "Spacious sectional sofa in a vibrant red, perfect for hosting guests or a movie night.",
+        "tags": ["sectional", "red", "spacious", "vibrant"]
+    },
+    {
+        "id": 13,
+        "type": "chair",
+        "name": "Lounge Chair",
+        "price": 180,
+        "color": "Green",
+        "material": "Fabric",
+        "description": "Kick back and relax with this stylish lounge chair, designed for ultimate relaxation.",
+        "tags": ["lounge", "green", "relax", "stylish"]
+    },
+    {
+        "id": 14,
+        "type": "sofa",
+        "name": "Chesterfield Sofa",
+        "price": 400,
+        "color": "Burgundy",
+        "material": "Leather",
+        "description": "Experience timeless elegance with this classic Chesterfield sofa, adding a touch of vintage charm.",
+        "tags": ["chesterfield", "burgundy", "classic", "vintage"]
+    },
+    {
+        "id": 15,
+        "type": "chair",
+        "name": "Armchair",
+        "price": 140,
+        "color": "Yellow",
+        "material": "Fabric",
+        "description": "Brighten up your space with this sunny yellow armchair, offering both comfort and style.",
+        "tags": ["armchair", "yellow", "bright", "comfort"]
+    },
+    {
+        "id": 16,
+        "type": "sofa",
+        "name": "Futon Sofa",
+        "price": 220,
+        "color": "Navy",
+        "material": "Fabric",
+        "description": "Multifunctional futon sofa that effortlessly transforms into a bed, perfect for small spaces.",
+        "tags": ["futon", "navy", "multifunctional", "transformable"]
+    },
+    {
+        "id": 17,
+        "type": "chair",
+        "name": "Swivel Chair",
+        "price": 120,
+        "color": "Purple",
+        "material": "Fabric",
+        "description": "Modern swivel chair in a stunning purple hue, perfect for adding a pop of color to any room.",
+        "tags": ["swivel", "purple", "modern", "stunning"]
+    },
+    {
+        "id": 18,
+        "type": "sofa",
+        "name": "Love Seat",
+        "price": 260,
+        "color": "Pink",
+        "material": "Velvet",
+        "description": "Romantic love seat in soft velvet, ideal for cozy evenings with that special someone.",
+        "tags": ["love seat", "pink", "romantic", "cozy"]
+    },
+    {
+        "id": 19,
+        "type": "chair",
+        "name": "Dining Chair",
+        "price": 80,
+        "color": "Olive",
+        "material": "Wood",
+        "description": "Elegant dining chair in an olive finish, the perfect companion for memorable dinner nights.",
+        "tags": ["dining", "olive", "elegant", "wooden"]
+    },
+    {
+        "id": 20,
+        "type": "sofa",
+        "name": "Daybed Sofa",
+        "price": 310,
+        "color": "Teal",
+        "material": "Fabric",
+        "description": "Versatile daybed sofa in a serene teal color, seamlessly blending function and aesthetics.",
+        "tags": ["daybed", "teal", "versatile", "serene"]
+    }
+]
