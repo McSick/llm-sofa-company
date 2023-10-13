@@ -21,7 +21,7 @@ npm start
 ```
 
 ## Usage
-Navigate to (http://localhost:3000)[http://localhost:3000] to view the app.
+Navigate to [http://localhost:3000](http://localhost:3000) to view the app.
 
 
 Update the prompt to test around diffent prompts. See llm.setTemplate in server.ts.
