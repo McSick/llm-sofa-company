@@ -76,7 +76,7 @@ vintage,armchair,yellow,bright,futon,navy,multifunctional,transformable,swivel,p
 love seat,pink,romantic,dining,olive,elegant,daybed,teal,serene]\nDescription:"{searchText}"`;
 
 const llm = getLLM(process.env.LLM_MODEL || "");
-llm.setTemplate(template_simple);
+llm.setTemplate(template_example_output);
 
 app.post('/search', async (req:any, res:any) => {
     const searchDescription = req.body.search;
