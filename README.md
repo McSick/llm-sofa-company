@@ -2,7 +2,7 @@
 # Description
 This is a simple app to display a list of sofas and their details.
 The app hooks into an LLM to take a description and output a list of tags to search for.
-This currently can use either OpenAI or AWS Bedrock - Claud.  
+This currently can use either OpenAI or AWS Bedrock - Claude.  
 See Environment Variables section on how to configure.
 
 ## Installation
