@@ -1,4 +1,4 @@
-interface LLM {
+export interface LLM {
     template: String;
     model: string;
     client: any;

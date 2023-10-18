@@ -1,5 +1,6 @@
 const opentelemetry = require("@opentelemetry/api");
 const OpenAI = require('openai');
+import { LLM } from './LLM';
 
   
 export class OpenAIWrapper implements LLM {

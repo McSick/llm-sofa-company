@@ -1,6 +1,6 @@
 const opentelemetry = require("@opentelemetry/api");
 import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime";
-
+import { LLM } from './LLM';
 
 export class ClaudBedrockWrapper implements LLM {
     template: string;
